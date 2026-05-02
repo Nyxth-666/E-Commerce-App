@@ -1,5 +1,4 @@
-const API_URL =
-  "https://kolzsticks.github.io/Free-Ecommerce-Products-Api/main/products.json";
+const API_URL = import.meta.env.VITE_API_URL;
 
 let cache = null;
 
