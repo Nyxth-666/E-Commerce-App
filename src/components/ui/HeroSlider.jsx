@@ -51,3 +51,5 @@ function HeroSlider() {
 
   const next = () => setCurrent((prev) => (prev + 1) % slides.length);
 }
+
+export default HeroSlider;
