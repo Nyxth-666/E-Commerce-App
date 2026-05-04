@@ -31,3 +31,23 @@ const slides = [
     bg: "bg-red-50",
   },
 ];
+
+function HeroSlider() {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, [paused]);
+
+  const prev = () =>
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+
+  const next = () => setCurrent((prev) => (prev + 1) % slides.length);
+}
