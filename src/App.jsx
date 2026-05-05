@@ -1,17 +1,11 @@
+import HeroSlider from "./components/ui/HeroSlider";
 
-import AboutPage from "./pages/AboutPage";
-
-
-
-function App () {
-    return (
-        <>
-
-            <AboutPage />
-
-        </>
-    )
+function App() {
+  return (
+    <>
+      <HeroSlider />
+    </>
+  );
 }
-
 
 export default App;

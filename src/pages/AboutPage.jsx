@@ -4,14 +4,14 @@ function AboutPage() {
       {/* ORIGINAL SECTION — untouched */}
       <section className="min-h-screen flex items-center justify-center bg-white px-6">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
-
           {/* LEFT SIDE */}
           <div>
             <p className="text-sm tracking-widest text-red-500 uppercase mb-4">
               About Us
             </p>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
-              Find Your <span className="text-red-500">Perfect</span> Style, Every Day
+              Find Your <span className="text-red-500">Perfect</span> Style,
+              Every Day
             </h1>
             <p className="mt-6 text-gray-600 leading-relaxed">
               We're a one-stop destination for premium products across beauty,
@@ -45,23 +45,30 @@ function AboutPage() {
               <span className="text-gray-500 text-sm">Image Placeholder</span>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* FEATURES SECTION */}
-      <section className="w-full px-8 py-16" style={{ backgroundColor: "#111111" }}>
+      <section
+        className="w-full px-8 py-16"
+        style={{ backgroundColor: "#111111" }}
+      >
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
           {/* Left: Heading + Description */}
           <div className="pr-0 md:pr-10">
             <h2 className="text-white font-bold text-4xl md:text-5xl leading-tight">
               Premium quality,
             </h2>
-            <h2 className="font-bold text-4xl md:text-5xl leading-tight" style={{ color: "#e63946" }}>
+            <h2
+              className="font-bold text-4xl md:text-5xl leading-tight"
+              style={{ color: "#e63946" }}
+            >
               built for everyone.
             </h2>
-            <p className="mt-6 leading-relaxed text-sm" style={{ color: "#aaaaaa", maxWidth: "340px" }}>
+            <p
+              className="mt-6 leading-relaxed text-sm"
+              style={{ color: "#aaaaaa", maxWidth: "340px" }}
+            >
               From skincare to smartphones, our curated catalog brings together
               the products you need — lightweight, durable, and built for modern
               style. Every item is hand-picked for quality and value.
@@ -70,52 +77,100 @@ function AboutPage() {
 
           {/* Right: 2×2 Feature Cards */}
           <div className="grid grid-cols-2 gap-4">
-
             {/* Quality First */}
-            <div className="rounded-2xl p-6 flex flex-col gap-3" style={{ backgroundColor: "#1c1c1c" }}>
+            <div
+              className="rounded-2xl p-6 flex flex-col gap-3"
+              style={{ backgroundColor: "#1c1c1c" }}
+            >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L14.09 8.26L21 9.27L16.5 13.14L17.82 20L12 16.77L6.18 20L7.5 13.14L3 9.27L9.91 8.26L12 2Z" fill="#e63946" />
+                <path
+                  d="M12 2L14.09 8.26L21 9.27L16.5 13.14L17.82 20L12 16.77L6.18 20L7.5 13.14L3 9.27L9.91 8.26L12 2Z"
+                  fill="#e63946"
+                />
               </svg>
-              <h3 className="text-white font-semibold text-sm">Quality First</h3>
-              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>
+              <h3 className="text-white font-semibold text-sm">
+                Quality First
+              </h3>
+              <p
+                className="text-xs leading-relaxed"
+                style={{ color: "#888888" }}
+              >
                 Every product is curated for durability and performance.
               </p>
             </div>
 
             {/* Best Prices */}
-            <div className="rounded-2xl p-6 flex flex-col gap-3" style={{ backgroundColor: "#1c1c1c" }}>
+            <div
+              className="rounded-2xl p-6 flex flex-col gap-3"
+              style={{ backgroundColor: "#1c1c1c" }}
+            >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.93V18h-2v-1.07C9.39 16.64 8 15.45 8 14h2c0 .55.45 1 1 1h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-1.66 0-3-1.34-3-3 0-1.45 1.39-2.64 3-2.93V6h2v1.07C14.61 7.36 16 8.55 16 10h-2c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1h2c1.66 0 3 1.34 3 3 0 1.45-1.39 2.64-3 2.93z" fill="#cccccc" />
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.93V18h-2v-1.07C9.39 16.64 8 15.45 8 14h2c0 .55.45 1 1 1h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-1.66 0-3-1.34-3-3 0-1.45 1.39-2.64 3-2.93V6h2v1.07C14.61 7.36 16 8.55 16 10h-2c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1h2c1.66 0 3 1.34 3 3 0 1.45-1.39 2.64-3 2.93z"
+                  fill="#cccccc"
+                />
               </svg>
               <h3 className="text-white font-semibold text-sm">Best Prices</h3>
-              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>
+              <p
+                className="text-xs leading-relaxed"
+                style={{ color: "#888888" }}
+              >
                 Premium products at accessible, fair pricing.
               </p>
             </div>
 
             {/* Fast Delivery */}
-            <div className="rounded-2xl p-6 flex flex-col gap-3" style={{ backgroundColor: "#1c1c1c" }}>
+            <div
+              className="rounded-2xl p-6 flex flex-col gap-3"
+              style={{ backgroundColor: "#1c1c1c" }}
+            >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="9" stroke="#cccccc" strokeWidth="2" fill="none" />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  stroke="#cccccc"
+                  strokeWidth="2"
+                  fill="none"
+                />
               </svg>
-              <h3 className="text-white font-semibold text-sm">Fast Delivery</h3>
-              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>
+              <h3 className="text-white font-semibold text-sm">
+                Fast Delivery
+              </h3>
+              <p
+                className="text-xs leading-relaxed"
+                style={{ color: "#888888" }}
+              >
                 Get your orders delivered quickly, wherever you are.
               </p>
             </div>
 
             {/* Trusted Reviews */}
-            <div className="rounded-2xl p-6 flex flex-col gap-3" style={{ backgroundColor: "#1c1c1c" }}>
+            <div
+              className="rounded-2xl p-6 flex flex-col gap-3"
+              style={{ backgroundColor: "#1c1c1c" }}
+            >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="5" fill="#cccccc" />
-                <circle cx="12" cy="12" r="9" stroke="#cccccc" strokeWidth="1.5" fill="none" />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  stroke="#cccccc"
+                  strokeWidth="1.5"
+                  fill="none"
+                />
               </svg>
-              <h3 className="text-white font-semibold text-sm">Trusted Reviews</h3>
-              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>
+              <h3 className="text-white font-semibold text-sm">
+                Trusted Reviews
+              </h3>
+              <p
+                className="text-xs leading-relaxed"
+                style={{ color: "#888888" }}
+              >
                 Real ratings from verified buyers, always.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -123,74 +178,69 @@ function AboutPage() {
   );
 }
 
-
-
 // About Page
 // Hufana
 
-const AboutPage = () => {
-    return (
-        <div className="flex justify-between">
-            <div className="flex-1">
-                <div className="px-9 py-20 flex flex-col space-y-8">
-                    <span className="text-red-500 font-light uppercase tracking-widest">
-                        about us
-                    </span>
+// const AboutPage = () => {
+//     return (
+//         <div className="flex justify-between">
+//             <div className="flex-1">
+//                 <div className="px-9 py-20 flex flex-col space-y-8">
+//                     <span className="text-red-500 font-light uppercase tracking-widest">
+//                         about us
+//                     </span>
 
-                    <div className="font-bold text-5xl leading-tight">
-                        <p>Find</p>
-                        <p>Your <span className="text-red-500">Perfect</span></p>
-                        <p>Style, Every</p>
-                        <p>Day</p>
-                    </div>
+//                     <div className="font-bold text-5xl leading-tight">
+//                         <p>Find</p>
+//                         <p>Your <span className="text-red-500">Perfect</span></p>
+//                         <p>Style, Every</p>
+//                         <p>Day</p>
+//                     </div>
 
+//                     <p className="leading-tight max-w-sm">
+//                         We're a one-stop destination for premium porducts
+//                         accross beauty, fashion, electronics, and more.
+//                         Discover comfort, quality, and UV protection — all
+//                         designed for modern living.
+//                     </p>
 
-                    <p className="leading-tight max-w-sm">
-                        We're a one-stop destination for premium porducts
-                        accross beauty, fashion, electronics, and more.
-                        Discover comfort, quality, and UV protection — all
-                        designed for modern living.
-                    </p>
+//                     <div className="flex space-x-5">
+//                         <span>
+//                             <h1 className="text-4xl font-bold">50+</h1>
+//                             <p className="font-light">Products</p>
+//                         </span>
+//                         <span>
+//                             <h1 className="text-4xl font-bold">5</h1>
+//                             <p className="font-light">Categories</p>
+//                         </span>
+//                         <span>
+//                             <h1 className="text-4xl font-bold flex items-center gap-1">
+//                                 4.6
+//                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+//                                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+//                                 </svg>
+//                             </h1>
+//                             <p className="font-light">Avg Rating</p>
+//                         </span>
+//                     </div>
 
+//                     <button className="bg-zinc-100 text-black px-3 py-1 text-sm border border-zinc-200 rounded-md hover:bg-zinc-50">
+//                         Explore Collection
+//                     </button>
+//                 </div>
 
-                    <div className="flex space-x-5">
-                        <span>
-                            <h1 className="text-4xl font-bold">50+</h1>
-                            <p className="font-light">Products</p>
-                        </span>
-                        <span>
-                            <h1 className="text-4xl font-bold">5</h1>
-                            <p className="font-light">Categories</p>
-                        </span>
-                        <span>
-                            <h1 className="text-4xl font-bold flex items-center gap-1">
-                                4.6
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                </svg>
-                            </h1>
-                            <p className="font-light">Avg Rating</p>
-                        </span>
-                    </div>
+//             </div>
 
-                    <button className="bg-zinc-100 text-black px-3 py-1 text-sm border border-zinc-200 rounded-md hover:bg-zinc-50">
-                        Explore Collection
-                    </button>
-                </div>
+//             <div className="flex-1">
+//                 {/* dito yung image */}
 
-            </div>
+//                 <div className="bg-zinc-500 flex-1 min-h-screen text-center text-white">
+//                     <p className="text-center">Place holder ito</p>
+//                 </div>
+//             </div>
 
-            <div className="flex-1">
-                {/* dito yung image */}
+//         </div>
+//     )
+// }
 
-                <div className="bg-zinc-500 flex-1 min-h-screen text-center text-white">
-                    <p className="text-center">Place holder ito</p>
-                </div>
-            </div>
-
-        </div>
-    )
-}
-
-
-export default AboutPage;
+// export default AboutPage;
