@@ -55,7 +55,7 @@ function HeroSlider() {
     <>
       {/* MAIN CONTAINER */}
       <div
-        className="relative w-full overflow-hidden rounded-2xl mx-auto my-6 max-w-5xl shadow-sm"
+        className="relative w-full overflow-hidden rounded-2xl mx-auto my-6 max-w-5xl shadow-md"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
@@ -100,7 +100,7 @@ function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-64 h-64 object-contain drop-shadow-lg"
+                className="w-64 h-64 object-contain drop-shadow-lg select-none touch-none"
               />
             </div>
           </div>
