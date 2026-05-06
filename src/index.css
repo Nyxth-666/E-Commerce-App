@@ -1,1 +1,87 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+/* LIGHT MODE */
+:root {
+    --color-bg: #F8F9FA;
+    --color-primary-text: #000;
+    --color-secondary-text: #414141;
+    --color-special-text: #D54D5F;
+    --color-primary-button: #D54D5F;
+    --color-secondary-button: #E6E6E6;
+    --color-primary-icon: #000;
+    --color-secondary-icon: #fff;
+    --color-secondary-icon-bg: #D54D5F;
+    --color-primary-search-border: #000;
+    --color-star: #F5D146;
+    --color-product-box: #fff;
+    --color-product-shadow: 0 4px 23px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* DARK MODE */
+.dark {
+    --color-bg: #0D0D0D;
+    --color-primary-text: #F5F5F5;
+    --color-secondary-text: #A0A0A0;
+    --color-special-text: #E8697A;
+    --color-primary-button: #D54D5F;
+    --color-secondary-button: #2A2A2A;
+    --color-primary-icon: #F5F5F5;
+    --color-secondary-icon: #ffffff;
+    --color-secondary-icon-bg: #D54D5F;
+    --color-primary-search-border: #3A3A3A;
+    --color-star: #F5D146;
+    --color-product-box: #1A1A1A;
+    --color-product-shadow: 0 4px 23px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* ── GLOBAL RESET ── */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-primary-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.product-box {
+    border-radius: .75rem;
+    background-color: var(--color-product-box);
+    box-shadow: var(--color-product-shadow);
+    transition: box-shadow 0.3s ease;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary-button);
+    border-radius: 10px;
+}
