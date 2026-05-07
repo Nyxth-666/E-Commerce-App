@@ -1,9 +1,10 @@
 import HomePage from "./pages/HomePage";
+import ContactUs from "./pages/ContactPage";
 
 function App() {
   return (
     <>
-      <HomePage />
+      <ContactUs />
     </>
   );
 }
