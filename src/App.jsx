@@ -1,9 +1,9 @@
-import HeroSlider from "./components/ui/HeroSlider";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <>
-      <HeroSlider />
+      <HomePage />
     </>
   );
 }
