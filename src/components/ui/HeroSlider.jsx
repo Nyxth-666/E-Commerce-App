@@ -84,34 +84,47 @@ function HeroSlider() {
           ].join(" ")}
           style={{
             backgroundColor: isDark ? slide.darkBg : slide.lightBg,
+            padding: "70px",
           }}
         >
           {/* LEFT SIDE */}
           <div className="flex-1 space-y-4">
             <p
-              className="font-semibold text-sm flex items-center gap-1"
-              style={{ color: "var(--color-special-text)" }}
+              className="highlighted-text font-semibold text-sm flex items-center gap-1"
+              style={{
+                color: "var(--color-special-text)",
+                marginBottom: "5px",
+              }}
             >
               ★ {slide.label}
             </p>
 
             <h2
-              className="text-3xl font-black leading-tight"
-              style={{ color: "var(--color-primary-text)" }}
+              className="highlighted-text text-3xl font-black leading-tight"
+              style={{
+                color: "var(--color-primary-text)",
+                marginBottom: "25px",
+              }}
             >
               {slide.title}
             </h2>
 
             <p
               className="text-sm max-w-xs"
-              style={{ color: "var(--color-secondary-text)" }}
+              style={{
+                color: "var(--color-secondary-text)",
+                marginBottom: "5px",
+              }}
             >
               {slide.description}
             </p>
 
             <p
               className="text-sm"
-              style={{ color: "var(--color-secondary-text)" }}
+              style={{
+                color: "var(--color-secondary-text)",
+                marginBottom: "10px",
+              }}
             >
               starting at{" "}
               <span
@@ -127,6 +140,7 @@ function HeroSlider() {
               style={{
                 backgroundColor: "var(--color-primary-button)",
                 color: "var(--color-secondary-icon)",
+                padding: "6px 26px",
               }}
             >
               Get it now
@@ -150,6 +164,7 @@ function HeroSlider() {
         style={{
           backgroundColor: "var(--color-product-box)",
           color: "var(--color-primary-icon)",
+          padding: "10px",
         }}
         onClick={prev}
       >
@@ -162,6 +177,7 @@ function HeroSlider() {
         style={{
           backgroundColor: "var(--color-product-box)",
           color: "var(--color-primary-icon)",
+          padding: "10px",
         }}
         onClick={next}
       >
