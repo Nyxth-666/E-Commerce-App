@@ -2,11 +2,7 @@ import HomePage from "./pages/HomePage";
 import ContactUs from "./pages/ContactPage";
 
 function App() {
-  return (
-    <>
-      <ContactUs />
-    </>
-  );
+  return <></>;
 }
 
 export default App;
