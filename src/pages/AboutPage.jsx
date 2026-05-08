@@ -178,6 +178,8 @@ function AboutPage() {
   );
 }
 
+export default AboutPage;
+
 // About Page
 // Hufana
 
