@@ -1,0 +1,26 @@
+.footer {
+  background: #f5f5f5;
+  padding: 20px 40px;
+  border-radius: 12px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.footer-item {
+  flex: 1;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.footer-item:last-child {
+  border-right: none;
+}
+
+.icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
