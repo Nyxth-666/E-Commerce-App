@@ -21,6 +21,7 @@ function Stars({ rating = 4, reviewCount = 0 }) {
 }
 
 export default function MoreFeaturedProducts() {
+  const [scrollPos, setScrollPos] = useState(0);
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
 
@@ -44,16 +45,61 @@ export default function MoreFeaturedProducts() {
       });
   }, []);
 
+  const handleScroll = (direction) => {
+    const container = document.getElementById('products-carousel');
+    if (!container) return;
+    const cardWidth = 280 + 16; // card width + gap
+    if (direction === 'left') {
+      setScrollPos(Math.max(0, scrollPos - cardWidth));
+    } else {
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      setScrollPos(Math.min(maxScroll, scrollPos + cardWidth));
+    }
+  };
+
+  useEffect(() => {
+    const container = document.getElementById('products-carousel');
+    if (container) {
+      container.scrollLeft = scrollPos;
+    }
+  }, [scrollPos]);
+
   const pickList = products.slice(0, 9);
 
   return (
-    <section className="w-full px-4 py-8 bg-[#f0f2f5]">
+    <section className="w-full px-4 py-8">
       <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-4">More Featured Picks</h3>
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-xl font-bold text-gray-900">More Featured Picks</h3>
+          <div className="flex gap-2">
+            <button
+              onClick={() => handleScroll('left')}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-gray-50 transition-colors"
+              aria-label="Scroll left"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => handleScroll('right')}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-gray-50 transition-colors"
+              aria-label="Scroll right"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
 
         {error && <div className="text-red-500 mb-3">Error loading products: {error}</div>}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div
+          id="products-carousel"
+          className="flex gap-4 overflow-x-hidden scroll-smooth"
+          style={{ scrollBehavior: 'smooth' }}
+        >
           {pickList.map((item, idx) => {
             const img = item.image || item.imageUrl || item.images?.[0] || '';
             const title = item.name || item.title || item.productName || `Product ${idx + 1}`;
@@ -64,7 +110,7 @@ export default function MoreFeaturedProducts() {
             const reviewCount = item.rating?.count ?? item.reviewCount ?? item.reviews ?? 0;
 
             return (
-              <div key={item.id ?? idx} className="bg-white rounded-2xl p-4 shadow-sm flex flex-col gap-3">
+              <div key={item.id ?? idx} className="flex-shrink-0 w-72 bg-white rounded-2xl p-4 shadow-lg flex flex-col gap-3">
                 <div className="relative rounded-xl p-3 flex items-center justify-center h-36 bg-transparent">
                   {img ? (
                     <img src={img} alt={item.alt || title} className="h-full object-contain" />
@@ -107,12 +153,12 @@ export default function MoreFeaturedProducts() {
         </div>
       </div>
 
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <details>
           <summary className="text-sm text-gray-600">Raw product data (first 5 items)</summary>
           <pre className="mt-2 max-h-64 overflow-auto text-xs bg-white p-3 rounded">{JSON.stringify(products.slice(0, 5), null, 2)}</pre>
         </details>
-      </div>
+      </div> */}
     </section>
   );
 }

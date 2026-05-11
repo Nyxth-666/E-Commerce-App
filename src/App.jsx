@@ -1,6 +1,7 @@
 
 import React from 'react';
 import MoreFeaturedProducts from './components/ui/MoreFeaturedProducts';
+import Footer from './components/layouts/Footer';
 const FeatureItem = ({ icon, title, desc, showDivider }) => {
   const itemStyle = {
     display: 'flex',
@@ -218,47 +219,6 @@ function App() {
   zIndex: '1'
   };
 
-  // ===== FOOTER =====
-  const footerBoxStyle = {
-    border: '1px solid #f0f0f0',
-    borderRadius: '15px',
-    width: '100%',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
-    backgroundColor: '#fff'
-  };
-
-  const containerStyle = {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    flexWrap: 'nowrap',
-    padding: '10px 0'
-  };
-
-  const footerItems = [
-    {
-      icon: '🛡️',
-      title: 'Quality Guaranteed',
-      desc: 'premium products you can trust'
-    },
-    {
-      icon: '🚚',
-      title: 'Fast Delivery',
-      desc: 'Get your items quickly and safely.'
-    },
-    {
-      icon: '✔️',
-      title: 'Easy Returns',
-      desc: 'hassle-free returns within 7-days.'
-    },
-    {
-      icon: '🎧',
-      title: 'Customer Support',
-      desc: "We're here to help 24/7."
-    }
-  ];
-
   return (
     <div style={pageStyle}>
       <div style={mainBoxStyle}>
@@ -320,21 +280,7 @@ function App() {
         </div>
 
         <MoreFeaturedProducts />
-
-        {/* ===== FOOTER ===== */}
-        <div style={footerBoxStyle}>
-          <div style={containerStyle}>
-            {footerItems.map((item, index) => (
-              <FeatureItem
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                desc={item.desc}
-                showDivider={index !== footerItems.length - 1}
-              />
-            ))}
-          </div>
-        </div>
+        <Footer/>
 
       </div>
     </div>
