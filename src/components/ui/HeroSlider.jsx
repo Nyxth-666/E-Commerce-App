@@ -35,7 +35,6 @@ const slides = [
   },
 ];
 
-// ✅ Safer initialization with lazy useState
 function useIsDark() {
   const [isDark, setIsDark] = useState(() =>
     document.documentElement.classList.contains("dark"),
@@ -80,69 +79,34 @@ function HeroSlider() {
           key={slide.id}
           className={[
             index === current ? "block" : "hidden",
-            "flex flex-col md:flex-row items-center justify-between px-10 py-10 gap-6",
+            "flex flex-col md:flex-row items-center justify-between p-15 gap-6",
           ].join(" ")}
           style={{
             backgroundColor: isDark ? slide.darkBg : slide.lightBg,
-            padding: "70px",
           }}
         >
           {/* LEFT SIDE */}
           <div className="flex-1 space-y-4">
-            <p
-              className="highlighted-text font-semibold text-sm flex items-center gap-1"
-              style={{
-                color: "var(--color-special-text)",
-                marginBottom: "5px",
-              }}
-            >
+            <p className="highlighted-text font-semibold text-sm flex items-center gap-1 m-1 text-(--color-special-text)">
               ★ {slide.label}
             </p>
 
-            <h2
-              className="highlighted-text text-3xl font-black leading-tight"
-              style={{
-                color: "var(--color-primary-text)",
-                marginBottom: "25px",
-              }}
-            >
+            <h2 className="highlighted-text text-3xl font-black leading-tight text-(--color-primary-text)">
               {slide.title}
             </h2>
 
-            <p
-              className="text-sm max-w-xs"
-              style={{
-                color: "var(--color-secondary-text)",
-                marginBottom: "5px",
-              }}
-            >
+            <p className="text-sm max-w-xs mb-3 text-(--color-secondary-text)">
               {slide.description}
             </p>
 
-            <p
-              className="text-sm"
-              style={{
-                color: "var(--color-secondary-text)",
-                marginBottom: "10px",
-              }}
-            >
+            <p className="text-sm mb-2 text-(--color-secondary-text)">
               starting at{" "}
-              <span
-                className="font-bold text-base"
-                style={{ color: "var(--color-special-text)" }}
-              >
+              <span className="font-bold text-base text-(--color-special-text)">
                 {formatPrice(slide.priceCents)}
               </span>
             </p>
 
-            <button
-              className="text-sm font-semibold px-6 py-2.5 rounded-lg transition-colors"
-              style={{
-                backgroundColor: "var(--color-primary-button)",
-                color: "var(--color-secondary-icon)",
-                padding: "6px 26px",
-              }}
-            >
+            <button className="text-sm font-semibold px-6 py-1.5 rounded-lg transition-colors text-(--color-secondary-icon) bg-(--color-primary-button)">
               Get it now
             </button>
           </div>
@@ -160,12 +124,7 @@ function HeroSlider() {
 
       {/* PREV BUTTON */}
       <button
-        className="absolute left-3 top-1/2 -translate-y-1/2 shadow p-2 rounded-full transition-colors"
-        style={{
-          backgroundColor: "var(--color-product-box)",
-          color: "var(--color-primary-icon)",
-          padding: "10px",
-        }}
+        className="absolute left-3 top-1/2 -translate-y-1/2 shadow p-3 rounded-full transition-colors bg-(--color-product-box) text-(--color-primary-icon)"
         onClick={prev}
       >
         ‹
@@ -173,12 +132,7 @@ function HeroSlider() {
 
       {/* NEXT BUTTON */}
       <button
-        className="absolute right-3 top-1/2 -translate-y-1/2 shadow p-2 rounded-full transition-colors"
-        style={{
-          backgroundColor: "var(--color-product-box)",
-          color: "var(--color-primary-icon)",
-          padding: "10px",
-        }}
+        className="absolute right-3 top-1/2 -translate-y-1/2 shadow p-3 rounded-full transition-colors bg-(--color-product-box) text-(--color-primary-icon)"
         onClick={next}
       >
         ›
