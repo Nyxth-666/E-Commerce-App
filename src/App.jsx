@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import MoreFeaturedProducts from './components/ui/MoreFeaturedProducts';
 const FeatureItem = ({ icon, title, desc, showDivider }) => {
   const itemStyle = {
     display: 'flex',
@@ -318,6 +318,8 @@ function App() {
             />
           </div>
         </div>
+
+        <MoreFeaturedProducts />
 
         {/* ===== FOOTER ===== */}
         <div style={footerBoxStyle}>
