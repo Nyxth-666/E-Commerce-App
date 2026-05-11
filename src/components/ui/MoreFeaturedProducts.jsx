@@ -64,7 +64,18 @@ export default function MoreFeaturedProducts() {
     }
   }, [scrollPos]);
 
-  const pickList = products.slice(0, 9);
+  const pickList = products
+    .sort((a, b) => {
+      const ratingA = a.rating?.stars ?? a.rating ?? a.stars ?? 0;
+      const ratingB = b.rating?.stars ?? b.rating ?? b.stars ?? 0;
+      const countA = a.rating?.count ?? a.reviewCount ?? a.reviews ?? 0;
+      const countB = b.rating?.count ?? b.reviewCount ?? b.reviews ?? 0;
+      
+      // Sort by rating first (descending), then by review count (descending)
+      if (ratingB !== ratingA) return ratingB - ratingA;
+      return countB - countA;
+    })
+    .slice(0, 9);
 
   return (
     <section className="w-full px-4 py-8">
@@ -110,7 +121,7 @@ export default function MoreFeaturedProducts() {
             const reviewCount = item.rating?.count ?? item.reviewCount ?? item.reviews ?? 0;
 
             return (
-              <div key={item.id ?? idx} className="flex-shrink-0 w-72 bg-white rounded-2xl p-4 shadow-lg flex flex-col gap-3">
+              <div key={item.id ?? idx} className="flex-shrink-0 w-72 bg-white rounded-2xl p-4 shadow-lg flex flex-col gap-3 mb-6">
                 <div className="relative rounded-xl p-3 flex items-center justify-center h-36 bg-transparent">
                   {img ? (
                     <img src={img} alt={item.alt || title} className="h-full object-contain" />
