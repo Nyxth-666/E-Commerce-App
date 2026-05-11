@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180">
+  <rect width="260" height="180" fill="#e8eaf6"/>
+  <ellipse cx="130" cy="100" rx="75" ry="55" fill="#ff6d00"/>
+  <ellipse cx="130" cy="80" rx="75" ry="40" fill="#ff6d00"/>
+  <ellipse cx="130" cy="78" rx="73" ry="38" fill="#ff8c00"/>
+  <line x1="130" y1="45" x2="130" y2="95" stroke="#cc4400" stroke-width="2"/>
+  <ellipse cx="130" cy="62" rx="12" ry="7" fill="#e65100"/>
+  <rect x="155" y="55" width="18" height="28" rx="9" fill="#cc4400"/>
+  <rect x="158" y="58" width="12" height="10" rx="5" fill="#ff8c00"/>
+  <text x="108" y="148" font-family="Arial" font-size="11" font-weight="bold" fill="#cc4400">INZONE</text>
+</svg>

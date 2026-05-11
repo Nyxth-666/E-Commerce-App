@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const FeatureItem = ({ icon, title, desc, showDivider }) => {
@@ -339,3 +340,13 @@ function App() {
 }
 
 export default App;
+// =======
+// import HomePage from "./pages/HomePage";
+// import ContactUs from "./pages/ContactPage";
+
+// function App() {
+//   return <></>;
+// }
+
+// export default App;
+// >>>>>>> main
