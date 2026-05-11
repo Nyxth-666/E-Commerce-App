@@ -99,7 +99,7 @@ function App() {
 
   // LEFT SIDE
   const leftStyle = {
-    width: '30%',
+    width: '50%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center'
@@ -270,9 +270,7 @@ function App() {
             <span style={featuredLabelStyle}>★ Featured</span>
 
             <h1 style={headingStyle}>
-              Featured
-              <br />
-              Products
+              Featured Products
             </h1>
 
             <p style={paragraphStyle}>
