@@ -101,4 +101,17 @@ html {
         box-shadow: var(--color-product-shadow);
         transition: box-shadow 0.3s ease;
     }
+
+    .footer-links p,
+    .footer-column p:first-child,
+    .icon {
+        cursor: pointer;
+        transition: opacity 0.2s;
+    }
+
+    .footer-links p:hover,
+    .footer-column p:first-child:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+    }
 }
