@@ -3,6 +3,7 @@ import TrustBar from "../components/ui/TrustBar";
 import ProductCard from "../components/ui/ProductCard";
 import { useProducts } from "../hooks/useProducts";
 import Categories from "../components/ui/CategoryCard";
+import CategoriesSection from "../components/ui/CategorySection";
 
 function HomePage() {
   const { products, loading, error } = useProducts();
@@ -18,7 +19,7 @@ function HomePage() {
         <TrustBar />
 
         <div className="w-full px-5">
-          <Categories />
+          <CategoriesSection />
         </div>
 
         {/* Products grid */}
