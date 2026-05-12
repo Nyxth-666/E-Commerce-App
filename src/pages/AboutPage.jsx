@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 function AboutPage() {
+  const navigate = useNavigate();
+
   return (
     <>
       {/* ORIGINAL SECTION */}
@@ -32,7 +36,10 @@ function AboutPage() {
                 <p className="text-gray-500 text-sm">Avg Rating</p>
               </div>
             </div>
-            <button className="mt-8 px-6 py-2 border border-gray-400 rounded-md text-sm hover:bg-gray-100 transition">
+            <button
+              onClick={() => navigate("/home")}
+              className="mt-8 px-6 py-2 border border-gray-400 rounded-md text-sm hover:bg-gray-100 transition"
+            >
               Explore Collection
             </button>
           </div>
@@ -42,40 +49,18 @@ function AboutPage() {
             className="relative flex items-center justify-center min-h-screen"
             style={{ backgroundColor: "#E9F0F8" }}
           >
-{/* Back circle (gray-blue) */}
-<div
-  className="absolute rounded-full"
-  style={{
-    backgroundColor: "#DAE0E7",
-    width: "526px",
-    height: "511px",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-70%, -40%)",
-  }}
-></div>
-{/* Front circle (pink) */}
-<div
-  className="absolute rounded-full"
-  style={{
-    backgroundColor: "#E6D3DA",
-    width: "526px",
-    height: "511px",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-30%, -60%)",
-  }}
-></div>
-            {/* Person image */}
+            <div
+              className="absolute rounded-full"
+              style={{ backgroundColor: "#DAE0E7", width: "526px", height: "511px", top: "50%", left: "50%", transform: "translate(-70%, -40%)" }}
+            />
+            <div
+              className="absolute rounded-full"
+              style={{ backgroundColor: "#E6D3DA", width: "526px", height: "511px", top: "50%", left: "50%", transform: "translate(-30%, -60%)" }}
+            />
             <img
               src="/src/assets/about-page/person.png"
               alt="Person"
-              style={{
-                width: "315px",
-                height: "485px",
-                borderRadius: "20px",
-                objectFit: "cover",
-              }}
+              style={{ width: "315px", height: "485px", borderRadius: "20px", objectFit: "cover" }}
               className="relative z-10"
             />
           </div>
@@ -92,16 +77,10 @@ function AboutPage() {
             <h2 className="text-white font-bold text-4xl md:text-5xl leading-tight">
               Premium quality,
             </h2>
-            <h2
-              className="font-bold text-4xl md:text-5xl leading-tight"
-              style={{ color: "#e63946" }}
-            >
+            <h2 className="font-bold text-4xl md:text-5xl leading-tight" style={{ color: "#e63946" }}>
               built for everyone.
             </h2>
-            <p
-              className="mt-6 leading-relaxed text-sm"
-              style={{ color: "#aaaaaa", maxWidth: "340px" }}
-            >
+            <p className="mt-6 leading-relaxed text-sm" style={{ color: "#aaaaaa", maxWidth: "340px" }}>
               From skincare to smartphones, our curated catalog brings together
               the products you need — lightweight, durable, and built for modern
               style. Every item is hand-picked for quality and value.
@@ -109,63 +88,37 @@ function AboutPage() {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div
-              className="rounded-2xl p-6 flex flex-col gap-3"
-              style={{ backgroundColor: "#1c1c1c" }}
-            >
+            <div className="rounded-2xl p-6 flex flex-col gap-3" style={{ backgroundColor: "#1c1c1c" }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 2L14.09 8.26L21 9.27L16.5 13.14L17.82 20L12 16.77L6.18 20L7.5 13.14L3 9.27L9.91 8.26L12 2Z"
-                  fill="#e63946"
-                />
+                <path d="M12 2L14.09 8.26L21 9.27L16.5 13.14L17.82 20L12 16.77L6.18 20L7.5 13.14L3 9.27L9.91 8.26L12 2Z" fill="#e63946" />
               </svg>
               <h3 className="text-white font-semibold text-sm">Quality First</h3>
-              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>
-                Every product is curated for durability and performance.
-              </p>
+              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>Every product is curated for durability and performance.</p>
             </div>
 
-            <div
-              className="rounded-2xl p-6 flex flex-col gap-3"
-              style={{ backgroundColor: "#1c1c1c" }}
-            >
+            <div className="rounded-2xl p-6 flex flex-col gap-3" style={{ backgroundColor: "#1c1c1c" }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.93V18h-2v-1.07C9.39 16.64 8 15.45 8 14h2c0 .55.45 1 1 1h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-1.66 0-3-1.34-3-3 0-1.45 1.39-2.64 3-2.93V6h2v1.07C14.61 7.36 16 8.55 16 10h-2c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1h2c1.66 0 3 1.34 3 3 0 1.45-1.39 2.64-3 2.93z"
-                  fill="#cccccc"
-                />
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.93V18h-2v-1.07C9.39 16.64 8 15.45 8 14h2c0 .55.45 1 1 1h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-1.66 0-3-1.34-3-3 0-1.45 1.39-2.64 3-2.93V6h2v1.07C14.61 7.36 16 8.55 16 10h-2c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1h2c1.66 0 3 1.34 3 3 0 1.45-1.39 2.64-3 2.93z" fill="#cccccc" />
               </svg>
               <h3 className="text-white font-semibold text-sm">Best Prices</h3>
-              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>
-                Premium products at accessible, fair pricing.
-              </p>
+              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>Premium products at accessible, fair pricing.</p>
             </div>
 
-            <div
-              className="rounded-2xl p-6 flex flex-col gap-3"
-              style={{ backgroundColor: "#1c1c1c" }}
-            >
+            <div className="rounded-2xl p-6 flex flex-col gap-3" style={{ backgroundColor: "#1c1c1c" }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="9" stroke="#cccccc" strokeWidth="2" fill="none" />
               </svg>
               <h3 className="text-white font-semibold text-sm">Fast Delivery</h3>
-              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>
-                Get your orders delivered quickly, wherever you are.
-              </p>
+              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>Get your orders delivered quickly, wherever you are.</p>
             </div>
 
-            <div
-              className="rounded-2xl p-6 flex flex-col gap-3"
-              style={{ backgroundColor: "#1c1c1c" }}
-            >
+            <div className="rounded-2xl p-6 flex flex-col gap-3" style={{ backgroundColor: "#1c1c1c" }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="5" fill="#cccccc" />
                 <circle cx="12" cy="12" r="9" stroke="#cccccc" strokeWidth="1.5" fill="none" />
               </svg>
               <h3 className="text-white font-semibold text-sm">Trusted Reviews</h3>
-              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>
-                Real ratings from verified buyers, always.
-              </p>
+              <p className="text-xs leading-relaxed" style={{ color: "#888888" }}>Real ratings from verified buyers, always.</p>
             </div>
           </div>
         </div>
