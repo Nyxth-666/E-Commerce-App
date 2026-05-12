@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useDarkMode } from "../../hooks/useDarkMode";
-import useCart from "../../context/CartContext";
-import useWishlist from "../../context/WishlistContext";
+import { useCart } from "../../context/CartContext.jsx"
+import { useWishlist } from "../../context/WishlistContext.jsx";
 import Logo from "../../assets/logo/Logo.png";
 
 const NAV_LINKS = [
