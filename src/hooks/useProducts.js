@@ -3,7 +3,7 @@ import {
   getProducts,
   getProductsByCategory,
   searchProducts,
-} from "../api/products";
+} from "../api/product";
 
 export function useProducts({ category = "All", query = "" } = {}) {
   const [products, setProducts] = useState([]);
