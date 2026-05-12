@@ -1,15 +1,15 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import NavBar from "./NavBar"
+import FooterBar from "./FooterBar"
 
 export default function Layout() {
   return (
     <div style={{ backgroundColor: "var(--color-bg)" }}>
-      <Navbar />
+      <NavBar />
       <main>
         <Outlet />
       </main>
-      <Footer />
+      <FooterBar />
     </div>
   );
 }
