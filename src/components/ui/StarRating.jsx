@@ -1,15 +1,25 @@
-import React from "react";
-
-const StarRating = ({ rating = 0, reviews = 0 }) => {
-    return (
-        <div className="rating">
-            {"⭐".repeat(rating)}
-            {"☆".repeat(5 - rating)}
-            <span> ({reviews})</span>
-        </div>
-    )
+export default function StarRating({ stars, count }) {
+  return (
+    <div className="flex items-center gap-1">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <span
+          key={star}
+          style={{
+            color:
+              star <= Math.round(stars)
+                ? "var(--color-star)"
+                : "var(--color-secondary-button)",
+            fontSize: "14px",
+          }}
+        >
+          ★
+        </span>
+      ))}
+      {count && (
+        <span className="text-xs ml-1 text-(--color-secondary-text)">
+          ({count})
+        </span>
+      )}
+    </div>
+  );
 }
-
-// push test
-
-export default StarRating;
