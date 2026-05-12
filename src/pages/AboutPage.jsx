@@ -1,12 +1,11 @@
-
 function AboutPage() {
   return (
     <>
       {/* ORIGINAL SECTION */}
-      <section className="min-h-screen flex items-center justify-center bg-white px-6">
-        <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+      <section className="min-h-screen flex items-center justify-center bg-white">
+        <div className="w-full grid md:grid-cols-2 items-center">
           {/* LEFT SIDE */}
-          <div>
+          <div className="px-16 py-20">
             <p className="text-sm tracking-widest text-red-500 uppercase mb-4">
               About Us
             </p>
@@ -38,13 +37,47 @@ function AboutPage() {
             </button>
           </div>
 
-          {/* RIGHT SIDE — untouched */}
-          <div className="relative flex items-center justify-center">
-            <div className="absolute w-72 h-72 bg-red-100 rounded-full -z-10"></div>
-            <div className="absolute w-96 h-96 bg-blue-100 rounded-full -z-20"></div>
-            <div className="w-[280px] h-[360px] bg-gray-200 rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="text-gray-500 text-sm">Image Placeholder</span>
-            </div>
+          {/* RIGHT SIDE */}
+          <div
+            className="relative flex items-center justify-center min-h-screen"
+            style={{ backgroundColor: "#E9F0F8" }}
+          >
+{/* Back circle (gray-blue) */}
+<div
+  className="absolute rounded-full"
+  style={{
+    backgroundColor: "#DAE0E7",
+    width: "526px",
+    height: "511px",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-70%, -40%)",
+  }}
+></div>
+{/* Front circle (pink) */}
+<div
+  className="absolute rounded-full"
+  style={{
+    backgroundColor: "#E6D3DA",
+    width: "526px",
+    height: "511px",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-30%, -60%)",
+  }}
+></div>
+            {/* Person image */}
+            <img
+              src="/src/assets/about-page/person.png"
+              alt="Person"
+              style={{
+                width: "315px",
+                height: "485px",
+                borderRadius: "20px",
+                objectFit: "cover",
+              }}
+              className="relative z-10"
+            />
           </div>
         </div>
       </section>
@@ -55,7 +88,6 @@ function AboutPage() {
         style={{ backgroundColor: "#111111", minHeight: "779px" }}
       >
         <div className="w-full max-w-[1440px] mx-auto px-16 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Left: Heading + Description */}
           <div className="pr-0 md:pr-10">
             <h2 className="text-white font-bold text-4xl md:text-5xl leading-tight">
               Premium quality,
@@ -76,9 +108,7 @@ function AboutPage() {
             </p>
           </div>
 
-          {/* Right: 2×2 Feature Cards */}
           <div className="grid grid-cols-2 gap-4">
-            {/* Quality First */}
             <div
               className="rounded-2xl p-6 flex flex-col gap-3"
               style={{ backgroundColor: "#1c1c1c" }}
@@ -95,7 +125,6 @@ function AboutPage() {
               </p>
             </div>
 
-            {/* Best Prices */}
             <div
               className="rounded-2xl p-6 flex flex-col gap-3"
               style={{ backgroundColor: "#1c1c1c" }}
@@ -112,7 +141,6 @@ function AboutPage() {
               </p>
             </div>
 
-            {/* Fast Delivery */}
             <div
               className="rounded-2xl p-6 flex flex-col gap-3"
               style={{ backgroundColor: "#1c1c1c" }}
@@ -126,7 +154,6 @@ function AboutPage() {
               </p>
             </div>
 
-            {/* Trusted Reviews */}
             <div
               className="rounded-2xl p-6 flex flex-col gap-3"
               style={{ backgroundColor: "#1c1c1c" }}
