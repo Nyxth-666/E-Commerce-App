@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
 import { formatPrice } from "../../api/product";
+import { useState } from "react";
+import ProductModal from "./ProductModal";
 import StarRating from "./StarRating";
 
 // ── ICONS ──────────────────────────────────────────────────────────
@@ -42,6 +44,7 @@ function CartIcon() {
 }
 
 export default function ProductCard({ product }) {
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
   const { addToCart, isInCart } = useCart();
   const { toggleWishlist, isWishlisted } = useWishlist();
@@ -70,69 +73,78 @@ export default function ProductCard({ product }) {
   };
 
   return (
-    <div
-      className="product-box flex flex-col overflow-hidden cursor-pointer transition-transform hover:-translate-y-1"
-      onClick={handleCardClick}
-    >
-      <div className="relative flex items-center justify-center p-4 rounded-xl m-3 bg-(--color-bg)">
-        {/* Product Image */}
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-32 h-32 object-contain"
-          onError={(e) => {
-            e.target.src = "/placeholder.png";
-          }}
-        />
+    <>
+      {/* Modal */}
+      {showModal && (
+        <ProductModal product={product} onClose={() => setShowModal(false)} />
+      )}
+      <div
+        className="product-box flex flex-col overflow-hidden cursor-pointer transition-transform hover:-translate-y-1"
+        onClick={handleCardClick}
+      >
+        <div className="relative flex items-center justify-center p-4 rounded-xl m-3 bg-(--color-bg)">
+          {/* Product Image */}
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-32 h-32 object-contain"
+            onError={(e) => {
+              e.target.src = "/placeholder.png";
+            }}
+          />
 
-        {/* Wishlist Heart Button */}
-        <button
-          onClick={handleWishlist}
-          className="absolute top-2 right-2 transition-opacity hover:opacity-70"
-          style={{
-            color: wishlisted
-              ? "var(--color-special-text)"
-              : "var(--color-secondary-text)",
-          }}
-        >
-          <HeartIcon filled={wishlisted} />
-        </button>
+          {/* Wishlist Heart Button */}
+          <button
+            onClick={handleWishlist}
+            className="absolute top-2 right-2 transition-opacity hover:opacity-70"
+            style={{
+              color: wishlisted
+                ? "var(--color-special-text)"
+                : "var(--color-secondary-text)",
+            }}
+          >
+            <HeartIcon filled={wishlisted} />
+          </button>
+        </div>
+        <div className="flex flex-col gap-1 px-4 pb-3 flex-1">
+          {/* Product Name */}
+          <p className="text-sm font-semibold leading-snug line-clamp-2 text-(--color-primary-text)">
+            {product.name}
+          </p>
+
+          {/* Star Rating */}
+          <StarRating
+            stars={product.rating.stars}
+            count={product.rating.count}
+          />
+
+          {/* Price */}
+          <p className="text-xl font-black mt-1 text-(--color-primary-text)">
+            {formatPrice(product.priceCents)}
+          </p>
+        </div>
+
+        {/* ── BOTTOM: Buttons ── */}
+        <div className="flex gap-2 px-3 pb-3">
+          {/* Add To Cart */}
+          <button
+            onClick={handleAddToCart}
+            className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-semibold transition-opacity hover:opacity-80 text-(--color-primary-text) bg-(--color-secondary-button)"
+          >
+            <CartIcon />
+            {inCart ? "Added ✓" : "Add To Cart"}
+          </button>
+
+          {/* Buy Now */}
+          <button
+            onClick={handleBuyNow}
+            className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-semibold transition-opacity hover:opacity-80 bg-(--color-primary-button) text-(--color-secondary-icon)"
+          >
+            <CartIcon />
+            Buy now
+          </button>
+        </div>
       </div>
-      <div className="flex flex-col gap-1 px-4 pb-3 flex-1">
-        {/* Product Name */}
-        <p className="text-sm font-semibold leading-snug line-clamp-2 text-(--color-primary-text)">
-          {product.name}
-        </p>
-
-        {/* Star Rating */}
-        <StarRating stars={product.rating.stars} count={product.rating.count} />
-
-        {/* Price */}
-        <p className="text-xl font-black mt-1 text-(--color-primary-text)">
-          {formatPrice(product.priceCents)}
-        </p>
-      </div>
-
-      {/* ── BOTTOM: Buttons ── */}
-      <div className="flex gap-2 px-3 pb-3">
-        {/* Add To Cart */}
-        <button
-          onClick={handleAddToCart}
-          className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-semibold transition-opacity hover:opacity-80 text-(--color-primary-text) bg-(--color-secondary-button)"
-        >
-          <CartIcon />
-          {inCart ? "Added ✓" : "Add To Cart"}
-        </button>
-
-        {/* Buy Now */}
-        <button
-          onClick={handleBuyNow}
-          className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl text-sm font-semibold transition-opacity hover:opacity-80 bg-(--color-primary-button) text-(--color-secondary-icon)"
-        >
-          <CartIcon />
-          Buy now
-        </button>
-      </div>
-    </div>
+    </>
   );
 }

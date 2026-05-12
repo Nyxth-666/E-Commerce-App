@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import CartPage from "./pages/CartPage";
+import PurchasePage from "./pages/PurchasePage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/cart" element={<CartPage />} />
+              <Route path="checkout" element={<PurchasePage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>
