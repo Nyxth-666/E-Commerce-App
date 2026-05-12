@@ -8,6 +8,7 @@ export default function FooterBar() {
 
   return (
     <footer className="bg-(--color-primary-text) text-(--color-bg)">
+      <hr className="w-full border-10 border-(--color-primary-text) mt-10" />
       {/* Top Section */}
       <div className="bg-(--color-bg) text-(--color-primary-text) flex flex-wrap items-start justify-between px-13 py-7">
         {/* LOGO */}
