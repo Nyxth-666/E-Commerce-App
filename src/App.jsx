@@ -5,8 +5,8 @@ import Layout from "./components/layouts/Layout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
-// import CartPage from "./pages/CartPage";
-// import NotFoundPage from "./pages/NotFoundPage";
+import CartPage from "./pages/CartPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   return (
@@ -15,9 +15,11 @@ export default function App() {
         <WishlistProvider>
           <Routes>
             <Route element={<Layout />}>
-              <Route path="/"         element={<HomePage />} />
-              <Route path="/about"    element={<AboutPage />} />
-              <Route path="/contact"  element={<ContactPage />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>
         </WishlistProvider>
