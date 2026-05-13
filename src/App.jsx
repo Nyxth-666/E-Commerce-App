@@ -7,6 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import CartPage from "./pages/CartPage";
 import PurchasePage from "./pages/PurchasePage";
+import ProductsPage from "./pages/ProductsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="checkout" element={<PurchasePage />} />
+              <Route path="products" element={<ProductsPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>
