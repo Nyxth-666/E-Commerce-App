@@ -1,10 +1,10 @@
 import { useSearchParams } from "react-router-dom";
-import { useProducts }     from "../hooks/useProducts";
+import { useProducts } from "../hooks/useProducts";
 
 export default function ProductsPage() {
-  const [searchParams]  = useSearchParams();
-  const category        = searchParams.get("category") || "All";
-  const query           = searchParams.get("search")   || "";
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get("category") || "All";
+  const query = searchParams.get("search") || "";
 
   const { products, loading, error } = useProducts({ category, query });
 
@@ -17,8 +17,12 @@ export default function ProductsPage() {
         {category === "All" ? "All Products" : category}
       </h2>
 
-      {loading && <p style={{ color: "var(--color-secondary-text)" }}>Loading...</p>}
-      {error   && <p style={{ color: "var(--color-special-text)"  }}>Error: {error}</p>}
+      {loading && (
+        <p style={{ color: "var(--color-secondary-text)" }}>Loading...</p>
+      )}
+      {error && (
+        <p style={{ color: "var(--color-special-text)" }}>Error: {error}</p>
+      )}
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {products.map((product) => (
