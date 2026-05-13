@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { useNavigate }         from "react-router-dom";
-import { getProducts }         from "../../api/product";
-import CategoryCard            from "./CategoryCard";
+import { useNavigate } from "react-router-dom";
+import { getProducts } from "../../api/product";
+import CategoryCard from "./CategoryCard";
 
 export default function CategoriesSection() {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]); // [{ name, image }]
-  const [loading, setLoading]       = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getProducts()
@@ -29,18 +29,18 @@ export default function CategoriesSection() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return (
-    <div
-      className="text-sm text-center py-6"
-      style={{ color: "var(--color-secondary-text)" }}
-    >
-      Loading categories...
-    </div>
-  );
+  if (loading)
+    return (
+      <div
+        className="text-sm text-center py-6"
+        style={{ color: "var(--color-secondary-text)" }}
+      >
+        Loading categories...
+      </div>
+    );
 
   return (
     <section className="my-8">
-
       {/* Section Header */}
       <h2
         className="text-xl font-black mb-6"
@@ -52,11 +52,7 @@ export default function CategoriesSection() {
       {/* Cards Row */}
       <div className="flex gap-4 flex-wrap">
         {categories.map(({ name, image }) => (
-          <CategoryCard
-            key={name}
-            category={name}
-            image={image}
-          />
+          <CategoryCard key={name} category={name} image={image} />
         ))}
       </div>
     </section>

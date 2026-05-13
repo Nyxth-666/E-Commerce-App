@@ -2,27 +2,18 @@ import HeroSlider from "../components/ui/HeroSlider";
 import TrustBar from "../components/ui/TrustBar";
 import ProductCard from "../components/ui/ProductCard";
 import { useProducts } from "../hooks/useProducts";
-import Categories from "../components/ui/CategoryCard";
-import CategoriesSection from "../components/ui/CategorySection";
+import CategoriesSection from "../components/ui/CategoriesSection";
 
 function HomePage() {
   const { products, loading, error } = useProducts();
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-full px-17.5 self-stretch">
         <HeroSlider />
-      </div>
-
-      <div className="px-17.5">
-        {/* Trust bar */}
         <TrustBar />
+        <CategoriesSection />
 
-        <div className="w-full px-5">
-          <CategoriesSection />
-        </div>
-
-        {/* Products grid */}
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
 
