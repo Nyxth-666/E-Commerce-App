@@ -9,7 +9,7 @@ function HomePage() {
 
   return (
     <>
-      <div className="w-full px-17.5 self-stretch">
+      <div className="flex flex-col w-full px-17.5 self-stretch justify-center gap-5 items-center">
         <HeroSlider />
         <TrustBar />
         <CategoriesSection />
