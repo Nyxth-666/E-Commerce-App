@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
-import Layout from "./components/layouts/Layout";
+import Layout from "./components/layout/Layout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -9,6 +9,7 @@ import CartPage from "./pages/CartPage";
 import PurchasePage from "./pages/PurchasePage";
 import ProductsPage from "./pages/ProductsPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import WishlistPage from "./pages/WishlistPage";
 
 export default function App() {
   return (
@@ -21,8 +22,9 @@ export default function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/cart" element={<CartPage />} />
-              <Route path="checkout" element={<PurchasePage />} />
-              <Route path="products" element={<ProductsPage />} />
+              <Route path="/checkout" element={<PurchasePage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/wishlist" element={<WishlistPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>
