@@ -2,7 +2,7 @@
 
 > A modern multi-page React e-commerce web application powered by a free products API. Designed to simulate a real-world online shopping experience with dynamic data, dark mode, and a responsive user interface.
 
-🌐 **Live Demo:** [lume-e-commerce-app.netlify.app](https://lume-e-commerce-app.netlify.app)
+🌐 **Live Demo:** [https://e-commerce-app-bice-beta.vercel.app/](https://e-commerce-dev072o1u-nyxths-projects.vercel.app/)
 
 ---
 
